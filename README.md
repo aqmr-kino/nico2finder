@@ -1,7 +1,7 @@
 # nico2finder
 
 ## 概要
-ニコニコ動画コンテンツ検索APIv2(https://site.nicovideo.jp/search-api-docs/search.html)を利用して動画の検索を行うことができるPythonのライブラリです。
+ニコニコ動画コンテンツ検索APIv2( https://site.nicovideo.jp/search-api-docs/search.html )を利用して動画の検索を行うことができるPythonのライブラリです。
 
 ## 使用方法
 ```python
@@ -97,8 +97,8 @@ nvf.set_response_fields(
 |most_mylists   | int | 最大マイリスト数 |
 |shortest_length| int | 最短再生時間(秒) |
 |longest_length | int | 最長再生時間(秒) |
-|later_posted   | str (ISO8601) | 投稿日時(〜より新しい) |
-|earlier_posted | str (ISO8601) | 投稿日時(〜より古い) |
+|posted_after   | str (ISO8601) | 投稿日時(〜より新しい) |
+|posted_before  | str (ISO8601) | 投稿日時(〜より古い) |
 |tag            | str | タグ絞りこみ |
 |genre          | str | ジャンル絞り込み |
 

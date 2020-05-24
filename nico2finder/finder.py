@@ -10,7 +10,6 @@ API_ENDPOINTS = {
     'search': '/api/v2/video',
     'search-video': '/api/v2/video',
     'search-live': '/api/v2/live',
-    'snapshot': '/api/v2/snapshot',
 }
 
 class Sort():
@@ -45,7 +44,7 @@ class SearchFilter():
                  least_comments=None, most_comments=None,
                  least_mylists=None, most_mylists=None,
                  shortest_length=None, longest_length=None,
-                 later_posted=None, earlier_posted=None,
+                 posted_after=None, posted_before=None,
                  tag=None, genre=None):
         """
         user_id        : 投稿者ID
@@ -57,8 +56,8 @@ class SearchFilter():
         most_mylists   : 最大マイリスト数
         shortest_length: 最短再生時間
         longest_length : 最長再生時間
-        later_posted   : 投稿日時(〜より新しい)
-        earlier_posted : 投稿日時(〜より古い)
+        posted_after   : 投稿日時(〜より新しい)
+        posted_before  : 投稿日時(〜より古い)
         tag            : タグ絞りこみ
         genre          : ジャンル絞り込み
         """
@@ -73,8 +72,8 @@ class SearchFilter():
         self.__set_attr("[mylistCounter][lte]", most_mylists)
         self.__set_attr("[lengthSeconds][gte]", shortest_length)
         self.__set_attr("[lengthSeconds][lte]", longest_length)
-        self.__set_attr("[startTime][gte]", later_posted)
-        self.__set_attr("[startTime][lte]", earlier_posted)
+        self.__set_attr("[startTime][gte]", posted_after)
+        self.__set_attr("[startTime][lte]", posted_before)
         self.__set_attr("[tags][0]", tag)
         self.__set_attr("[genre][0]", genre)
 
