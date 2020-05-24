@@ -110,7 +110,7 @@ SearchFilter(least_views=1000)
 SearchFilter(least_views=1000000, longest_length=60)
 
 # 2015年以前に投稿された10,000マイリス以上の動画
-SearchFilter(least_mylists=10000, earlier_posted='2015-12-31T23:59:59+09:00')
+SearchFilter(least_mylists=10000, posted_before='2015-12-31T23:59:59+09:00')
 ```
 
 ## 検索ソート (Sort オブジェクト)
@@ -121,7 +121,7 @@ SearchFilter(least_mylists=10000, earlier_posted='2015-12-31T23:59:59+09:00')
 |Oldest          | 投稿日時の古い順|
 |Latest          | 投稿日時の新しい順|
 |LeastCommented  | コメント数の少ない順|
-|MostCommented   | コメント数の新しい順|
+|MostCommented   | コメント数の多い順|
 |LeastPlayed     | 再生回数の少ない順|
 |MostPlayed      | 再生回数の多い順|
 |Shortest        | 再生時間の短い順|

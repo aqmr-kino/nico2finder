@@ -18,7 +18,7 @@ class Sort():
     Oldest          : 投稿日時の古い順
     Latest          : 投稿日時の新しい順
     LeastCommented  : コメント数の少ない順
-    MostCommented   : コメント数の新しい順
+    MostCommented   : コメント数の多い順
     LeastPlayed     : 再生回数の少ない順
     MostPlayed      : 再生回数の多い順
     Shortest        : 再生時間の短い順
