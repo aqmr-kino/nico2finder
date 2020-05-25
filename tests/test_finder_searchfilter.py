@@ -157,6 +157,24 @@ def test_filter_tag():
         'filters[tags][0]': 'VOCALOID'
     }
 
+def test_filter_multi_tags_tuple():
+    f = finder.SearchFilter(tag=('VOCALOID', 'ミク', 'リン'))
+
+    assert f.get_query() == {
+        'filters[tags][0]': 'VOCALOID',
+        'filters[tags][1]': 'ミク',
+        'filters[tags][2]': 'リン',
+    }
+
+def test_filter_multi_tags_list():
+    f = finder.SearchFilter(tag=['VOCALOID', 'ミク', 'リン'])
+
+    assert f.get_query() == {
+        'filters[tags][0]': 'VOCALOID',
+        'filters[tags][1]': 'ミク',
+        'filters[tags][2]': 'リン',
+    }
+
 #
 # SearchFilter Genre
 #
@@ -165,4 +183,22 @@ def test_filter_genre():
 
     assert f.get_query() == {
         'filters[genre][0]': '音楽・サウンド'
+    }
+
+def test_filter_multi_genres_tuple():
+    f = finder.SearchFilter(genre=('音楽・サウンド', 'ゲーム', 'その他'))
+
+    assert f.get_query() == {
+        'filters[genre][0]': '音楽・サウンド',
+        'filters[genre][1]': 'ゲーム',
+        'filters[genre][2]': 'その他',
+    }
+
+def test_filter_multi_genres_list():
+    f = finder.SearchFilter(genre=['音楽・サウンド', 'ゲーム', 'その他'])
+
+    assert f.get_query() == {
+        'filters[genre][0]': '音楽・サウンド',
+        'filters[genre][1]': 'ゲーム',
+        'filters[genre][2]': 'その他',
     }

@@ -74,12 +74,20 @@ class SearchFilter():
         self.__set_attr("[lengthSeconds][lte]", longest_length)
         self.__set_attr("[startTime][gte]", posted_after)
         self.__set_attr("[startTime][lte]", posted_before)
-        self.__set_attr("[tags][0]", tag)
-        self.__set_attr("[genre][0]", genre)
+        self.__set_attr_multiple("[tags][%d]", tag)
+        self.__set_attr_multiple("[genre][%d]", genre)
 
     def __set_attr(self, key, value):
         if value is not None:
             self.filters["filters" + key] = value
+
+    def __set_attr_multiple(self, key, value):
+        if value is not None:
+            if type(value) in (tuple, list):
+                for i, v in enumerate(value):
+                    self.__set_attr(key % (i,), v)
+            else:
+                self.__set_attr(key % (0,), value)
 
     def get_query(self):
         return self.filters
