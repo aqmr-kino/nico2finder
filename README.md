@@ -99,6 +99,8 @@ nvf.set_response_fields(
 |longest_length | int | 最長再生時間(秒) |
 |posted_after   | str (ISO8601) | 投稿日時(〜より新しい) |
 |posted_before  | str (ISO8601) | 投稿日時(〜より古い) |
+|last_commented_after | str (ISO8601) | 最終コメント日時(〜より新しい) |
+|last_commented_before | str (ISO8601) | 最終コメント日時(〜より古い) |
 |tag            | str, tuple(str), list(str) | タグ絞りこみ(複数指定可) |
 |genre          | str, tuple(str), list(str) | ジャンル絞り込み(複数指定可) |
 

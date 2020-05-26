@@ -147,6 +147,35 @@ def test_filter_range_posted():
     }
 
 #
+# SearchFilter Last commented time
+#
+
+def test_filter_last_commented_after():
+    f = finder.SearchFilter(last_commented_after='2011-01-01T00:00:00+09:00')
+
+    assert f.get_query() == {
+        'filters[lastCommentTime][gte]': '2011-01-01T00:00:00+09:00'
+    }
+
+def test_filter_last_commented_before():
+    f = finder.SearchFilter(last_commented_before='2020-01-01T00:00:00+09:00')
+
+    assert f.get_query() == {
+        'filters[lastCommentTime][lte]': '2020-01-01T00:00:00+09:00'
+    }
+
+def test_filter_last_commented_range():
+    f = finder.SearchFilter(
+        last_commented_after='2011-01-01T00:00:00+09:00',
+        last_commented_before='2020-01-01T00:00:00+09:00',
+    )
+
+    assert f.get_query() == {
+        'filters[lastCommentTime][gte]': '2011-01-01T00:00:00+09:00',
+        'filters[lastCommentTime][lte]': '2020-01-01T00:00:00+09:00',
+    }
+
+#
 # SearchFilter Tag
 #
 

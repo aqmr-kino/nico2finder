@@ -45,6 +45,7 @@ class SearchFilter():
                  least_mylists=None, most_mylists=None,
                  shortest_length=None, longest_length=None,
                  posted_after=None, posted_before=None,
+                 last_commented_after=None, last_commented_before=None,
                  tag=None, genre=None):
         """
         user_id        : 投稿者ID
@@ -58,6 +59,8 @@ class SearchFilter():
         longest_length : 最長再生時間
         posted_after   : 投稿日時(〜より新しい)
         posted_before  : 投稿日時(〜より古い)
+        last_commented_after : 最終コメント日時(〜より新しい)
+        last_commented_before: 最終コメント日時(〜より古い)
         tag            : タグ絞りこみ
         genre          : ジャンル絞り込み
         """
@@ -74,6 +77,8 @@ class SearchFilter():
         self.__set_attr("[lengthSeconds][lte]", longest_length)
         self.__set_attr("[startTime][gte]", posted_after)
         self.__set_attr("[startTime][lte]", posted_before)
+        self.__set_attr("[lastCommentTime][gte]", last_commented_after)
+        self.__set_attr("[lastCommentTime][lte]", last_commented_before)
         self.__set_attr_multiple("[tags][%d]", tag)
         self.__set_attr_multiple("[genre][%d]", genre)
 
