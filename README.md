@@ -129,3 +129,9 @@ SearchFilter(least_mylists=10000, posted_before='2015-12-31T23:59:59+09:00')
 |Shortest        | 再生時間の短い順|
 |Longest         | 再生時間の長い順|
 |RecentCommented | コメントの新しい順|
+
+## License
+- 本ツールのソースコードは、[MITライセンス](https://github.com/aqmr-kino/nico2finder/blob/master/LICENSE)で公開しています。
+
+- バックエンドで利用するニコニコ動画コンテンツ検索APIの利用規約については、ニコニコ動画コンテンツ検索APIドキュメント（下記参照）をご確認ください。  
+  https://site.nicovideo.jp/search-api-docs/search.html#制限事項
