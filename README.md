@@ -3,6 +3,11 @@
 ## 概要
 ニコニコ動画コンテンツ検索APIv2( https://site.nicovideo.jp/search-api-docs/search.html )を利用して動画の検索を行うことができるPythonのライブラリです。
 
+## インストール（pipの場合）
+```sh
+pip install git+https://github.com/aqmr-kino/nico2finder
+```
+
 ## 使用方法
 ```python
 from nico2finder import finder
