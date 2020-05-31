@@ -2,11 +2,14 @@ from setuptools import setup
 
 setup(
     name='nico2finder',
-    version='0.1.0',
+    version='0.1.1',
     description='The toolkit for search video contents which is on niconico.',
     author='aqmr-kino',
     url='https://github.com/aqmr-kino/nico2finder',
     license='MIT',
+    setup_requires=[
+        'wheel',
+    ],
     tests_require=[
         'pytest',
     ],
